@@ -1,5 +1,5 @@
 /* ======================================================
-   ⚽ football league management system (lowercase version)
+   ⚽ football league management system 
    ====================================================== */
 
 create database footballleague;
