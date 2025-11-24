@@ -1,4 +1,4 @@
---х╧╟▌ ╟с╧ц╤э 
+--┘З╪п╪з┘Б ╪з┘Д╪п┘И╪▒┘К ╪з┘Д╪г╪╣┘Д┘Й ╪к╪│╪м┘К┘Д┘Л╪з ┘Б┘К ╪п┘И╪▒┘К "┘Д╪з ┘Д┘К╪║╪з"
 SELECT TOP 1
     L.LeagueName,
     P.FirstName + ' ' + P.LastName AS PlayerName,
@@ -8,6 +8,6 @@ FROM Goal G
 JOIN Player P ON G.PlayerID = P.PlayerID
 JOIN Team T ON P.TeamID = T.TeamID
 JOIN League L ON T.LeagueID = L.LeagueID
-WHERE L.LeagueName = 'La Liga'   -- █э°╤ ┼сь ╟с╧ц╤э ╟с╨э ╩╤э╧х
+WHERE L.LeagueName = 'La Liga'   -- ╪з╪│┘Е ╪з┘Д╪п┘И╪▒┘К ╪з┘Д┘Е╪╖┘Д┘И╪и
 GROUP BY L.LeagueName, T.TeamName, P.FirstName, P.LastName
 ORDER BY Goals DESC;

@@ -1,6 +1,4 @@
--- สัสํศ วแÝัÞ Ýํ ฿แ ฯๆัํ อำศ วแไÞวุ ๆรํึว ฺฯฯ วแรๅฯวÝ แ฿แ ÝัํÞ
-SELECT 
-    L.LeagueName,
+-- ุชุฑุชูุจ ุงููุฑู ูู ูู ุฏูุฑู ุจูุงุกู ุนูู ุงูููุงุท ูุงูุฃูุฏุงู ุงูู…ุณุฌูุฉ
     T.TeamName,
     SUM(R.Points) AS TotalPoints,
     SUM(R.GoalsScored) AS TotalGoals

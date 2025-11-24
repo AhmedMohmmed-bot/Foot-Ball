@@ -1,10 +1,10 @@
---ÇáİÑŞ ÇáÃŞá ÊÚÑÖ ááÃÎØÇÁ 
-SELECT 
-    T.TeamName,
-    L.LeagueName,
-    SUM(S.Fouls) AS TotalFouls
-FROM TeamMatchStats S
-JOIN Team T ON S.TeamID = T.TeamID
-JOIN League L ON T.LeagueID = L.LeagueID
-GROUP BY T.TeamName, L.LeagueName
-ORDER BY TotalFouls ASC;
+-- Ø§Ù„ÙØ±Ù‚ Ù…Ø¹ Ø£Ù‚Ù„ Ø¹Ø¯Ø¯ Ù…Ù† Ø§Ù„Ø£Ø®Ø·Ø§Ø¡ ÙÙŠ ÙƒÙ„ Ø¯ÙˆØ±ÙŠ
+select 
+    t.teamname,
+    l.leaguename,
+    sum(s.fouls) AS TotalFouls
+FROM  teammatchstats s
+JOIN team t on s.teamid = t.teamid
+JOIN league l on t.leagueid = l.leagueid
+group by t.teamname , l.leaguename
+order by l.leaguename, TotalFouls asc;
