@@ -1,11 +1,13 @@
 -- ترتيب الفرق في كل دوري بناءً على النقاط والأهداف المسجلة
-    T.TeamName,
-    SUM(R.Points) AS TotalPoints,
-    SUM(R.GoalsScored) AS TotalGoals
-FROM MatchResult R
-JOIN Subscribe S ON R.MatchID = S.MatchID AND R.TeamID = S.TeamID
-JOIN Team T ON R.TeamID = T.TeamID
-JOIN League L ON T.LeagueID = L.LeagueID
-GROUP BY L.LeagueName, T.TeamName
-ORDER BY L.LeagueName, TotalPoints DESC, TotalGoals DESC;
+select
+    l.leaguename,
+    t.teamname ,
+    SUM(r.points) AS TotalPoints,
+    SUM(r.goalsscored) AS TotalGoals
+from matchresult r
+join subscribe s on r.matchid = s.matchid and s.teamid = r.teamid
+join team t on s.teamid = t.teamid
+join league l on t.leagueid = l.leagueid
+group by l.leaguename, t.teamname
+order by TotalPoints , TotalGoals desc;
 

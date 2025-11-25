@@ -1,13 +1,13 @@
 --هداف الدوري الأعلى تسجيلًا في دوري "لا ليغا"
-SELECT TOP 1
-    L.LeagueName,
-    P.FirstName + ' ' + P.LastName AS PlayerName,
-    T.TeamName,
-    COUNT(G.GoalID) AS Goals
-FROM Goal G
-JOIN Player P ON G.PlayerID = P.PlayerID
-JOIN Team T ON P.TeamID = T.TeamID
-JOIN League L ON T.LeagueID = L.LeagueID
-WHERE L.LeagueName = 'La Liga'   -- اسم الدوري المطلوب
-GROUP BY L.LeagueName, T.TeamName, P.FirstName, P.LastName
-ORDER BY Goals DESC;
+select top 1
+    l.leaguename,
+    p.firstname +''+ p.lastname as PlayerName,
+    t.teamname,
+    count (g.goalid) as Goals
+from goal g 
+join player p on g.playerid = p.playerid
+join team t on p.teamid = t.teamid
+join league l on t.leagueid = l.leagueid
+where leaguename = 'La Liga'   -- اسم الدوري المطلوب
+group by l.leaguename, p.firstname, p.lastname, t.teamname
+order by Goals desc;
